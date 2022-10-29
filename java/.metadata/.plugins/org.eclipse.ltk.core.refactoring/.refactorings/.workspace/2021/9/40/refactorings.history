@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;java8&apos; to &apos;Jdk-8&apos;" description="Rename resource &apos;java8&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/java8" name="Jdk-8" stamp="1632625856727" updateReferences="true"/>
+</session>

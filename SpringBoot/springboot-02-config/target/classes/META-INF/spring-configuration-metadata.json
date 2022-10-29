@@ -1,0 +1,62 @@
+{
+  "groups": [
+    {
+      "name": "dog",
+      "type": "com.mao.pojo.Dog",
+      "sourceType": "com.mao.pojo.Dog"
+    },
+    {
+      "name": "person",
+      "type": "com.mao.pojo.Person",
+      "sourceType": "com.mao.pojo.Person"
+    }
+  ],
+  "properties": [
+    {
+      "name": "dog.age",
+      "type": "java.lang.Integer",
+      "sourceType": "com.mao.pojo.Dog"
+    },
+    {
+      "name": "dog.firstname",
+      "type": "java.lang.String",
+      "sourceType": "com.mao.pojo.Dog"
+    },
+    {
+      "name": "person.age",
+      "type": "java.lang.Integer",
+      "sourceType": "com.mao.pojo.Person"
+    },
+    {
+      "name": "person.birth",
+      "type": "java.util.Date",
+      "sourceType": "com.mao.pojo.Person"
+    },
+    {
+      "name": "person.dog",
+      "type": "com.mao.pojo.Dog",
+      "sourceType": "com.mao.pojo.Person"
+    },
+    {
+      "name": "person.happy",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.mao.pojo.Person"
+    },
+    {
+      "name": "person.lists",
+      "type": "java.util.List<java.lang.Object>",
+      "sourceType": "com.mao.pojo.Person"
+    },
+    {
+      "name": "person.maps",
+      "type": "java.util.Map<java.lang.String,java.lang.Object>",
+      "sourceType": "com.mao.pojo.Person"
+    },
+    {
+      "name": "person.name",
+      "type": "java.lang.String",
+      "sourceType": "com.mao.pojo.Person"
+    }
+  ],
+  "hints": []
+}

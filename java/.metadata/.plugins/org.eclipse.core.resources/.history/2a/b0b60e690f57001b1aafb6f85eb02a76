@@ -1,0 +1,47 @@
+package 线程;
+
+import javax.swing.plaf.SliderUI;
+
+public class SyncTest implements Runnable {
+	Timer timer = new Timer();
+	public static void main(String[] args) {
+		
+	
+	SyncTest test = new SyncTest();
+	Thread t1 = new Thread(test);
+	Thread t2 = new Thread(test);
+	t1.setName("t1");
+	t2.setName("t2");
+	t1.start();
+	t2.start();
+	
+	}
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		timer.add(Thread.currentThread().getName());
+	}
+
+}
+
+
+class Timer{
+	private static int num =0;
+	public void add(String name) {
+		num++;
+		try {
+			Thread.sleep(1);
+		} catch (InterruptedException e) {
+			// TODO: handle exception
+		}
+		System.out.println(name+",你是第"+num+"个使用timer的线程");
+	}
+}
+
+
+
+
+
+
+
+

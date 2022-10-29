@@ -1,0 +1,18 @@
+person:
+  name: 胡超
+  age: 20
+  happy: false
+  birth: 2000/01/01
+  maps: {k1: v1,k2: v2}
+  lists:
+    - code
+    - girls
+    - music
+  dog:
+    name: 旺财
+    age: 1
+
+# 松散绑定(松散语法)
+dog:
+  First-name: 阿黄
+  age: 3

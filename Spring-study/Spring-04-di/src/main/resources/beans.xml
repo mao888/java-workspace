@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="addr" class="com.mao.pojo.Address">
+        <property name="adress" value="adr超"/>
+    </bean>
+
+    <bean id="student" class="com.mao.pojo.Student">
+        <!--第一种：普通值注入，value        -->
+        <property name="name" value="超哥"/>
+
+<!--        第二种，Bean注入，ref-->
+        <property name="address" ref="addr"/>
+
+<!--        3、数组注入-->
+        <property name="books">
+            <array>
+                <value>西游记</value>
+                <value>红楼梦</value>
+                <value>水浒传</value>
+            </array>
+        </property>
+
+<!--            4、List注入-->
+        <property name="hobbys">
+            <list>
+                <value>听歌</value>
+                <value>看电影</value>
+                <value>爬山</value>
+            </list>
+        </property>
+
+<!--        5、Map注入-->
+        <property name="card">
+            <map>
+                <entry key="中国邮政" value="456456456465456"/>
+                <entry key="建设" value="1456682255511"/>
+            </map>
+        </property>
+
+<!--        6、set注入-->
+        <property name="games">
+            <set>
+                <value>LOL</value>
+                <value>BOB</value>
+                <value>COC</value>
+            </set>
+        </property>
+
+<!--        7、Null注入-->
+        <property name="wife">
+            <null/>
+        </property>
+
+<!--        8、Properties注入-->
+        <property name="info">
+            <props>
+                <prop key="学号">20190604</prop>
+                <prop key="性别">男</prop>
+                <prop key="姓名">小明</prop>
+            </props>
+        </property>
+
+    </bean>
+
+
+</beans>

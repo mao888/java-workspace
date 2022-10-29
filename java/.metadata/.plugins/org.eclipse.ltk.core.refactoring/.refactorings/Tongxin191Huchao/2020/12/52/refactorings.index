@@ -1,0 +1,6 @@
+1608546165291	Rename package '大二'
+1608547867550	Rename type 'Fibonacci'
+1608556321725	Extract local variable 'sc'
+1608556345321	Extract local variable 'nextInt'
+1608557650698	Rename type '辗转相除'
+1608730177167	Extract local variable 'charArray'

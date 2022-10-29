@@ -1,0 +1,65 @@
+package JB发现杯;
+
+import java.util.Collections;
+
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.Set;
+
+public class JB10 {
+
+	private static final String Maps = null;
+
+	public static void main(String[] args) {
+		String str = "qweasjd42131231211jasdqwdijasidaeqq";//自定义字符串
+		String[] strs = str.split("");//转换为数组
+		Map<Object, Integer> map = Maps.newHashMap();//定义MAP
+		for (int i = 0; i < strs.length; i++) //循环数组
+		{
+			char temp = strs[i].charAt(0);//转换为字符
+			if( map.containsKey(temp) ) //判断key是否存在
+			{
+				map.put(temp, Integer.parseInt(map.get(temp).toString())+1);//存在把temp的值加1；
+			}else
+			{
+				map.put(temp, 1);//不存在 把值设置为1
+			}
+		}
+
+		int maxnum = Collections.max(map.values());//调用Collections类的max方法，获取map的值的集合；并找出最大的那个值；
+		String num = null;
+		for( Map.Entry<Object, Integer> value : map.entrySet() )//循环
+		{
+			if(value.getValue()==maxnum)//判断最大的值  和 次数
+			{
+				num = value.getKey().toString();
+			}
+			System.out.println( value.getKey() +"----"+ value.getValue() ); //不要上面的判断 直接输出则全部显示出来
+		}
+		System.out.println( num +"-----"+ maxnum );//输出最大的值  和 次数
+
+		}
+	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

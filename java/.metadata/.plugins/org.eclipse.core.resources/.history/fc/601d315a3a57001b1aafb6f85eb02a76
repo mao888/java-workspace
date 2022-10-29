@@ -1,0 +1,39 @@
+package Ïß³Ì;
+
+import org.junit.internal.runners.statements.FailOnTimeout;
+
+public class PriorityTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Thread t1 = new Thread(new T1());
+		Thread t2 = new Thread(new T2());
+		t1.start();
+		t2.start();
+	}
+
+}
+
+class T1 implements Runnable{
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		for (int i = 1; i < 1000; i++) {
+			System.out.println("T1: "+ i);
+		}
+	}
+}
+
+
+class T2 implements Runnable{
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		for (int i = 1; i < 1000; i++) {
+			System.out.println("T2----£º"+i);
+		}
+	}
+	
+}

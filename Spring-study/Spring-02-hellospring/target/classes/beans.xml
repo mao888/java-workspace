@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--bean就是java对象 , 由Spring创建和管理
+		 id 是bean的标识符,要唯一
+		 class是bean的全限定名=包名+类名
+		 property:类中的属性名
+		 value ：给对应的属性名赋值，我这里为"Spring"
+	-->
+    <!--这个下面的本质是先通过无参构造方法创建hello对象，然后用set方式注入值-->
+
+    <!--bean就是java对象 , 由Spring创建和管理-->
+    <bean id="hello" class="com.mao.pojo.Hello">
+        <property name="str" value="Spring"/>
+    </bean>
+
+</beans>

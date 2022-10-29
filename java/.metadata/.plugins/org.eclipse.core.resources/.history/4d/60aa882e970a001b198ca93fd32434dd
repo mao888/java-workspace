@@ -1,0 +1,26 @@
+package Vj”Ô∑®;
+import java.util.Scanner;
+public class H2 {
+	static double arr[] = new double [1005];
+	public static void name() {
+		for (int j = 0; j < 1005; j++) {
+			arr[j] = 1.0/j;
+		}
+		for (int j = 0; j < 1005; j++) {
+			if (j%2==0) {
+				arr[j]=arr[j-1]-arr[j];
+			} else {
+				arr[j]=arr[j-1]+arr[j];
+			}
+		}
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int m = sc.nextInt();
+		for (int i = 0; i < m; i++) {
+			int n = sc.nextInt();	
+			System.out.println(String.format("%.2f",arr[n]));
+		}
+	}
+}

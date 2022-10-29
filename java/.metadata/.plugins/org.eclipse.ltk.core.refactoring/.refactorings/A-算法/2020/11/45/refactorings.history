@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;数组.显示数组forforeachtoString&apos; to &apos;foreach遍历二维数组&apos;&#x0D;&#x0A;- Original project: &apos;A-算法&apos;&#x0D;&#x0A;- Original element: &apos;数组.显示数组forforeachtoString&apos;&#x0D;&#x0A;- Renamed element: &apos;数组.foreach遍历二维数组&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;显示数组forforeachtoString&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;数组{显示数组forforeachtoString.java[显示数组forforeachtoString" matchStrategy="1" name="foreach遍历二维数组" qualified="false" references="true" similarDeclarations="false" stamp="1604413773616" textual="false" version="1.0"/>
+</session>

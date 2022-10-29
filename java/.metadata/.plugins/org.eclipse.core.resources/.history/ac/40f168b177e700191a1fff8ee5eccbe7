@@ -1,0 +1,150 @@
+import java.io.IOException;
+import java.util.Scanner;
+//filename:App3_1.java
+
+
+//10月4日
+//public class Huchao1 {
+
+//	public static void main(String[] args) {System.out.println("小二最帅");
+		// TODO Auto-generated method stub
+
+//	System.out.println();}
+//
+//}
+//单行注释
+/*多行注释
+*小二最帅
+*/
+/*
+ * 
+ * 
+ */
+
+
+ //filename:App2_1.java
+public class Guoqing训练 
+{
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+System.out.println("HelloJava");
+	}
+
+	public static void main1(String[] args) 
+	{
+		;
+		class Jianpan
+		{
+			public void main(String[] args)throws IOException 
+			{
+			float f =3.22f;	// TODO Auto-generated method stub
+			double d=3.1415926;
+			System.out.println(f);
+			char c='二';
+			byte b=123;
+			short s=12345;
+			int i=123123;
+			long h=123456789;
+			char a='x';
+			boolean z=false;
+			System.out.println(d);
+			System.out.println(c);
+			System.out.println(b);
+			System.out.println(s);
+			System.out.println(i);
+			System.out.println(h);
+			System.out.println(a);
+			System.out.println(z);
+			}	
+		}
+ 
+		
+//10月5日
+		 /*
+		 * if(判断条件){
+	     * }   else {
+		 *	public class Day02{
+		 *	public static void main(String[] args) {
+		 *  成绩大于90分  输出A      80~90 B
+	     *  60~80 C   60D//
+	     */	 	
+//1	
+    int age=18;
+	if (age == 18)
+		System.out.println("可以访问本网站");
+	else
+	System.out.println("不可以访问本网站");
+	
+	
+//2	
+	System.out.println("请输入您的成绩");
+	Scanner sc = new  Scanner(System.in);
+	
+	int grade = sc.nextInt();
+	if(grade>90) {
+		System.out.println('A');
+	}else if (grade>80) {
+		System.out.println('B');
+	}else if (grade>60) {
+		System.out.println('C');
+	}else  {
+		System.out.println('D');
+			}
+		}
+	}
+
+//3下午
+//1
+/*import java.util.Scanner;
+public class Zuoye2 {
+	public static void main(String[] args) {
+	System.out.println("请用户输入三个数字");
+		Scanner sc = new Scanner(System.in);
+		int a = sc.nextInt();
+		int b = sc.nextInt();
+		int c = sc.nextInt();
+		if (a > b && a > c ) { 
+		       System.out.println(a);
+		}else if(b > a && b>c) {
+			System.out.println(b);
+		}else if(c > a && c>b) {
+			System.out.println(c);
+			}
+		}
+	}
+ */
+//2
+public class Guoqing训练 {
+
+	public static void main(String[] args) {
+		System.out.println("请用户输入一个四位数");
+		Scanner sc = new Scanner(System.in);
+		int a = sc.nextInt();
+		int qianwei = a/1000; 
+		int baiwei = a/100%10; 
+		int shiwei = a/10%10;
+		int gewei = a%10; 
+		int b = qianwei+baiwei*10+shiwei*100+gewei*1000;
+		System.out.println(b);
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

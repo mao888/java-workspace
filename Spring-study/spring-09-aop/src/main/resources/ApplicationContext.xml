@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+
+        http://www.springframework.org/schema/aop
+        https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+
+    <!--注册bean-->
+    <bean id="userService" class="com.mao.service.UserServiceImpl"/>
+    <bean id="log" class="com.mao.log.log"/>
+    <bean id="afterLog" class="com.mao.log.Afterlog"/>
+
+<!--    第二种-->
+    <bean id="diy" class="com.mao.diy.DiyPointcut"/>
+
+    <!--第三种方式:注解实现-->
+    <bean id="annotationPointcut" class="com.mao.diy.AnnotationPointcut"/>
+    <!--开启注解支持！ JDK(默认 proxy-target-class="false") cglib(proxy-target-class="true") -->
+    <aop:aspectj-autoproxy/>
+
+    <!--    方式一：使用原生Spring API接口-->
+    <!--aop的配置:需要导入AOP的约束-->
+<!--    <aop:config>-->
+<!--        &lt;!&ndash;切入点 expression:表达式匹配要执行的方法&ndash;&gt;-->
+<!--        <aop:pointcut id="pointcut" expression="execution(* com.mao.service.UserServiceImpl.*(..))"/>-->
+<!--        &lt;!&ndash;执行环绕; advice-ref执行方法 . pointcut-ref切入点&ndash;&gt;-->
+<!--        <aop:advisor advice-ref="log" pointcut-ref="pointcut"/>-->
+<!--        <aop:advisor advice-ref="afterLog" pointcut-ref="pointcut"/>-->
+<!--    </aop:config>-->
+
+    <!--aop的配置-->
+<!--    <aop:config>-->
+<!--        &lt;!&ndash;第二种方式：使用AOP的标签实现&ndash;&gt;-->
+<!--        <aop:aspect ref="diy">-->
+<!--            <aop:pointcut id="diyPonitcut" expression="execution(* com.mao.service.UserServiceImpl.*(..))"/>-->
+<!--            <aop:before pointcut-ref="diyPonitcut" method="before"/>-->
+<!--            <aop:after pointcut-ref="diyPonitcut" method="after"/>-->
+<!--        </aop:aspect>-->
+<!--    </aop:config>-->
+
+
+</beans>

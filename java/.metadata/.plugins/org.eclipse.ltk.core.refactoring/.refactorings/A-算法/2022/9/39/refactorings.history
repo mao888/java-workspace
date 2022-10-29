@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;A360笔试9月24.表妙计&apos; to &apos;表面积&apos;&#x0D;&#x0A;- Original project: &apos;A-算法&apos;&#x0D;&#x0A;- Original element: &apos;A360笔试9月24.表妙计&apos;&#x0D;&#x0A;- Renamed element: &apos;A360笔试9月24.表面积&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;表妙计&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/面试&lt;A360笔试9月24{表妙计.java[表妙计" matchStrategy="1" name="表面积" qualified="false" references="true" similarDeclarations="false" stamp="1664004526374" textual="false" version="1.0"/>
+</session>

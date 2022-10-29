@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="MysqlImpl" class="com.mao.dao.UserDaoMysqlImpl"/>
+<!--    <bean id="OracleImpl" class="com.mao.dao."/>-->
+    <bean id="SqlServerImpl" class="com.mao.dao.UserDaoSqlServer"/>
+
+    <bean id="ServiceImpl" class="com.mao.service.UserServiceImpl">
+        <!--注意: 这里的name并不是属性 , 而是set方法后面的那部分 , 首字母小写-->
+        <!--引用另外一个bean , 不是用value 而是用 ref-->
+        <!--ref:引用spring容器中创建好的对象
+        value：具体的值，基本数据类型！
+        -->
+        <property name="userDao" ref="MysqlImpl"/>
+    </bean>
+
+</beans>

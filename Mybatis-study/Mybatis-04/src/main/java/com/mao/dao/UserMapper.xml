@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace=绑定一个对应的Dao/Mapper接口-->
+<mapper namespace="com.mao.dao.UserMapper">
+
+<!--    &lt;!&ndash;解决方案一 &ndash;&gt;-->
+<!--    <select id="SelectUserById" parameterType="int" resultType="hello"> -->
+<!--        select id,name,pwd as password from user where id = #{id}  -->
+<!--    </select>-->
+
+    <resultMap id="UserMap" type="hello">
+<!--        id为主键-->
+        <!-- column是数据库表的列名 , property是对应实体类的属性名 -->
+<!--        <id column="id" property="id"/>-->
+<!--        <id column="name" property="name"/>-->
+<!--        <id column="pwd" property="password"/>-->
+        <result column="pwd" property="password"/>
+    </resultMap>
+
+    <select id="SelectUserById" resultMap="UserMap">
+        select * from user where id=#{id}
+    </select>
+
+<!--    分页-->
+    <select id="getUserByLimit" parameterType="map" resultType="hello">
+        select * from user limit #{startIndex},#{pageSize}
+    </select>
+
+    <select id="getUserByRowBounds" resultType="hello">
+        select * from user
+    </select>
+
+</mapper>

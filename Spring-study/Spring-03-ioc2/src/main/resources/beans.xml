@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+        <bean id="user" class="com.mao.pojo.User">
+<!--            <property name="name" value="胡超"/>-->
+
+<!--            IOC创建对象的三种方式-->
+<!--            1、下标赋值-->
+<!--            <constructor-arg index="0" value="胡超与Java"/>-->
+
+<!--            2、通过类型创建，不建议使用-->
+<!--            <constructor-arg type="java.lang.String" value="胡超"/>-->
+
+<!--            3、直接通过参数名来设置-->
+                <constructor-arg name="name" value="chaochao"/>
+
+            
+        </bean>
+                <!--
+                   id 是bean的标识符,要唯一,如果没有配置id,name就是默认标识符
+                   如果配置id,又配置了name,那么name是别名
+                   name可以设置多个别名,可以用逗号,分号,空格隔开
+                   如果不配置id和name,可以根据applicationContext.getBean(.class)获取对象;
+
+                    class是bean的全限定名=包名+类名
+                -->
+            <bean id="hello" name="hello2 h2,h3;h4" class="com.mao.pojo.User">
+                <constructor-arg value=""/>
+                <property name="name" value="Spring"/>
+            </bean>
+
+</beans>

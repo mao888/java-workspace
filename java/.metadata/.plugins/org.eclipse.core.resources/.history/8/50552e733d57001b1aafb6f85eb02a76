@@ -1,0 +1,36 @@
+package 线程;
+
+public class TTtest implements Runnable{
+	int b=100;
+	public synchronized void m1() throws Exception{			//问题1:当此方法执行的过程中  m2方法能够被执行吗
+		b=1000;												//是否要等到解锁后才能执行呢					
+		Thread.sleep(5000);
+		System.out.println("b= "+b);
+	}
+	
+	public synchronized void m2() throws Exception {
+		Thread.sleep(2500);
+//		System.out.println(b);
+//		b=2000;
+		System.out.println(b);
+	}
+	
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub  
+	try {
+		m1();
+	} catch (Exception e) {
+		// TODO: handle exception
+		e.printStackTrace();
+		}	
+	}
+	
+	public static void main(String[] args) throws Exception {
+		TTtest tt = new TTtest();
+		Thread t = new Thread(tt);
+		t.start();
+		Thread.sleep(1000);
+		tt.m2();
+	}
+}

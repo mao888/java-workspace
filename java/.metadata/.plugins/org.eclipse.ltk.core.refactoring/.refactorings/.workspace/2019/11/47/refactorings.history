@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;L-136.只出现一次的数字&apos;" deleteContents="false" description="Delete resource &apos;L-136.只出现一次的数字&apos;" element1="/L-136.只出现一次的数字" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1573974448066"/>&#x0A;<refactoring comment="Delete resource &apos;test&apos;" deleteContents="true" description="Delete resource &apos;test&apos;" element1="/test" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1574496054692"/>
+</session>

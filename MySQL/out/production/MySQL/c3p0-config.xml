@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<c3p0-config>
+
+    <!--
+    C3P0的缺省（默认）配置，
+    如果在代码中“ComboPooledDataSource comboPooledDataSource = new ComboPooledDataSource();”
+    这样写表示用的是C3P0的默认配置
+    -->
+    <default-config>
+        <property name="driverClass">com.mysql.jdbc.Driver</property>
+        <property name="jdbcUrl">
+            jdbc:mysql://localhost:3306/jdbcstudy?useUnicode=true&amp;characterEncoding=utf8&amp;serverTimezone=GMT%2B8&amp;useSSL=false
+        </property>
+        <property name="user">root</property>
+        <property name="password">root</property>
+
+        <property name="initialPoolSize">10</property>
+        <property name="maxIdleTime">30</property>
+        <property name="maxPoolSize">100</property>
+        <property name="minPoolSize">10</property>
+    </default-config>
+
+    <!--
+    C3P0的命名配置：
+    如果在代码中“ComboPooledDataSource comboPooledDataSource = new ComboPooledDataSource(“mySource”);”
+    这样写表示使用的是name为mySource的配置
+    -->
+    <named-config name="mySource">
+        <property name="driverClass">com.mysql.jdbc.Driver</property>
+        <property name="jdbcUrl">jdbc:mysql://localhost:3306/school1</property>
+        <property name="user">root</property>
+        <property name="password">root</property>
+
+        <property name="initialPoolSize">10</property>
+        <property name="maxIdleTime">30</property>
+        <property name="maxPoolSize">100</property>
+        <property name="minPoolSize">10</property>
+    </named-config>
+</c3p0-config>
+

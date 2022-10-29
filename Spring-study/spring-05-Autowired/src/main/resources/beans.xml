@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd
+
+        http://www.springframework.org/schema/aop
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    开启注解的支持-->
+    <context:annotation-config/>
+
+    <bean id="cat" class="com.mao.pojo.Cat"/>
+    <bean id="dog" class="com.mao.pojo.Dog"/>
+    <bean id="people" class="com.mao.pojo.People"/>
+
+    <!--
+        byName：会自动在容器上下文中查找，和自己对象set方法后面的值对应的bean id！
+        byType：会自动在容器上下文中查找，和自己对象属性类型相同的bean！
+    -->
+<!--    <bean id="people" class="com.mao.pojo.People" autowire="byType">-->
+<!--        <property name="name" value="小超超"/>-->
+
+<!--        <property name="cat" ref="cat"/>-->
+<!--        <property name="dog" ref="dog"/>-->
+
+<!--    </bean>-->
+</beans>

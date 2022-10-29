@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mao.dao.TeacherMapper">
+<!--    按结果嵌套处理-->
+    <!--
+   思路:
+       1. 从学生表和老师表中查出学生id，学生姓名，老师姓名
+       2. 对查询出来的操作做结果集映射
+           1. 集合的话，使用collection！
+               JavaType和ofType都是用来指定对象类型的
+               JavaType是用来指定pojo中属性的类型
+               ofType指定的是映射到list集合属性中pojo的类型。
+   -->
+    <select id="getTeacher" resultMap="TeacherStudent">
+        select s.id sid, s.name sname , t.name tname, t.id tid
+        from student s,teacher t
+        where s.tid = t.id and t.id=#{tid}
+    </select>
+
+    <resultMap id="TeacherStudent" type="Teacher">
+        <result  property="name" column="tname"/>
+        <collection property="students" ofType="Student">
+            <result property="id" column="sid" />
+            <result property="name" column="sname" />
+            <result property="tid" column="tid" />
+        </collection>
+    </resultMap>
+
+<!--    按查询嵌套处理  子查询-->
+    <select id="getTeacher2" resultMap="TeacherStudent2">
+        select * from teacher where id = #{tid}
+    </select>
+    <resultMap id="TeacherStudent2" type="Teacher">
+        <!--column是一对多的外键 , 写的是一的主键的列名-->
+        <collection property="students" javaType="ArrayList" ofType="Student" column="id" select="getStudentByTeacherId"/>
+    </resultMap>
+    <select id="getStudentByTeacherId" resultType="Student">
+        select * from student where tid = #{id}
+    </select>
+</mapper>

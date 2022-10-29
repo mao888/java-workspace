@@ -1,0 +1,86 @@
+package 数字马力2022年10月25;
+
+import java.util.Scanner;
+
+public class 字符串最后一个单词的长度 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		String str = sc.nextLine();
+		int i = str.length()-1;
+		int count = 0;
+		while ( i >=0 && str.charAt(i) != ' ') {
+			i --;
+			count++;
+		}
+		System.out.println(count);
+	}
+
+}
+
+
+import java.util.*;
+
+public class MonoSum {
+    public int calcMonoSum(int[] A, int n) {
+        // write code here
+        if (A == null || n == 0) {
+            return 0;
+        }
+        return mergeSortRecursion(A, 0, n - 1);
+    }
+    
+    /**
+     * 递归实现归并排序
+     *
+     * @param arr
+     * @param l
+     * @param r
+     * <a href="/profile/547241" data-card-uid="547241" class="js-nc-card" target="_blank">@return 返回数组小和
+     */
+    public static int mergeSortRecursion(int[] arr, int l, int r) {
+        if (l == r) {   // 当待排序数组长度为1时，递归开始回溯，进行merge操作
+            return 0;
+        }
+        int mid = (l + r) / 2;
+        return mergeSortRecursion(arr, l, mid) + mergeSortRecursion(arr, mid + 1, r) + merge(arr, l, mid, r);
+    }
+
+    /**
+     * 合并两个已排好序的数组s[left...mid]和s[mid+1...right]
+     *
+     * @param arr
+     * @param left
+     * @param mid
+     * @param right
+     * </a><a href="/profile/547241" data-card-uid="547241" class="js-nc-card" target="_blank">@return 返回合并过程中累加的数组小和
+     */
+    public static int merge(int[] arr, int left, int mid, int right) {
+        int[] temp = new int[right - left + 1];    // 辅助存储空间 O(n)
+        int index = 0;
+        int i = left;
+        int j = mid + 1;
+        int smallSum = 0;       // 新增，用来累加数组小和
+        while (i <= mid && j <= right) {
+            if (arr[i] <= arr[j]) {
+                // 当前一个数组元素小于或等于后一个数组元素时，累加小和
+                // s[i] <= s[j] -> s[i] <= s[j]...s[right]
+                smallSum += arr[i] * (right - j + 1);
+                temp[index++] = arr[i++];
+            } else {
+                temp[index++] = arr[j++];
+            }
+        }
+        while (i <= mid) {
+            temp[index++] = arr[i++];
+        }
+        while (j <= right) {
+            temp[index++] = arr[j++];
+        }
+        for (int k = 0; k < temp.length; k++) {
+            arr[left++] = temp[k];
+        }
+        return smallSum;
+    }
+}
